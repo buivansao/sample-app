@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: %i(edit update)
 
   def show
-    @micro_posts = @user.micro_posts.by_created_at.page(params[:page]).per(Settings.per_page)
+    @micro_posts = @user.micro_posts.by_created_at.page(params[:page]).per Settings.per_page
   end
 
   def new
